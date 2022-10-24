@@ -80,6 +80,41 @@ function Accueil() {
                     </div>
                 </div>
             </section>
+            <section className='accueil-liste-cours-section'>
+                {/* <div style={{position:'absolute',zIndex:3,right:0,bottom:'-15rem'}} className='col-5 img-bg--contenair'>
+                        <Image src={riz} alt="bg-section-container" />
+                    </div> */}
+                <div className='container py-5'>
+                    <div className='row justify-content-start align-items-center'>
+                        <div className='col-lg-7 col-md-8 col-sm-10 col-11 text-start'>
+                            <h1>
+                                Le Lorem Ipsum est simplement du faux 
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="container">
+                    
+                    <div className='row'>
+                        <SelectPlatsContainer />
+                    </div>
+                </div>
+                <div className='container'>
+                    <div className='row justify-content-start'>
+                        <div className='col-11'>
+                            <p className='fw-bolder fs-3 text-decoration-underline ms-md-4'  >
+                                10 cours
+                            </p>
+                        </div>
+                    </div>
+                    <div className='row justify-content-evenly align-items-center'>
+                        <PlatsCrad />
+                        <PlatsCrad />
+                        <PlatsCrad />
+                    </div>
+                </div>
+            </section>
             <section className='accueil-infos-section py-5'>
                 <div className='col-5 '>
                     <Image style={{position:'absolute',right:"0",zIndex:2}} src={foutou} alt="bg-section-container" />
@@ -121,41 +156,7 @@ function Accueil() {
                     </div>
                 </div>
             </section>
-            <section className='accueil-liste-cours-section'>
-                {/* <div style={{position:'absolute',zIndex:3,right:0,bottom:'-15rem'}} className='col-5 img-bg--contenair'>
-                        <Image src={riz} alt="bg-section-container" />
-                    </div> */}
-                <div className='container py-5'>
-                    <div className='row justify-content-start align-items-center'>
-                        <div className='col-lg-7 col-md-8 col-sm-10 col-11 text-start'>
-                            <h1>
-                                Le Lorem Ipsum est simplement du faux 
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-                
-                <div className="container">
-                    
-                    <div className='row'>
-                        <SelectPlatsContainer />
-                    </div>
-                </div>
-                <div className='container'>
-                    <div className='row justify-content-start'>
-                        <div className='col-11'>
-                            <p className='fw-bolder fs-3 text-decoration-underline ms-md-4'  >
-                                10 cours
-                            </p>
-                        </div>
-                    </div>
-                    <div className='row justify-content-evenly align-items-center'>
-                        <PlatsCrad />
-                        <PlatsCrad />
-                        <PlatsCrad />
-                    </div>
-                </div>
-            </section>
+          
         </main>
         )
 }
