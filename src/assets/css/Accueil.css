@@ -1,0 +1,103 @@
+
+
+.banner-accueil{
+    /* height:40rem; */
+    padding: 10rem 0 10rem 0;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.121), #0000004e), url("https://st.depositphotos.com/1011643/2996/i/600/depositphotos_29967459-stock-photo-young-african-chef-with-delicious.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.banner-accueil h1{
+    font-size: 42px;
+    display: block;
+    /* color: var(--primary-color); */
+ 
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+
+
+.accueil-infos-section{
+    
+    /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.121), #0000004e), url("http://www.aissatraiteur.com/wp-content/uploads/2019/07/aissa-traiteur-africain-livraison-plateaux-repas.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background: rgb(255, 255, 255);
+}
+
+.accueil-categorie-section{
+    
+    /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.121), #0000004e), url("http://www.aissatraiteur.com/wp-content/uploads/2019/07/aissa-traiteur-africain-livraison-plateaux-repas.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background: rgb(255, 255, 255);
+}
+
+.accueil-infos-section h1{
+    font-size: 70px;
+    display: block;
+    /* color: var(--primary-color); */
+ 
+    font-weight: 800;
+    /* text-transform: capitalize; */
+    line-height: 1.4;
+}
+.accueil-infos-section h2{
+    font-size: 30px;
+    display: block;
+    /* color: var(--primary-color); */
+ 
+    font-weight: 800;
+    /* text-transform: capitalize; */
+    line-height: 1.4;
+}
+
+.accueil-categorie-section {
+   background: #1d5e26;
+   /* background: #ff620d; */
+   /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.121), #0000004e), url("../images/accueil/svg1.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;  */
+    position: relative;
+    z-index: 3;
+}
+
+
+.img-bg-categorie-contenair img{
+    position: absolute;
+    z-index: 1;
+    top: -10rem;
+}
+.accueil-categorie-section h1{
+    font-size: 45px;
+    display: block;
+    color: #fff;
+ 
+    font-weight: 800;
+    /* text-transform: capitalize; */
+    line-height: 1.4;
+}
+
+.accueil-liste-cours-section {
+    position: relative;
+}
+
+
+.accueil-liste-cours-section h1{
+    font-size: 45px;
+    display: block;
+    color: var(--primary-color);
+    font-weight: 800;
+    /* text-transform: capitalize; */
+    line-height: 1.4;
+
+}
