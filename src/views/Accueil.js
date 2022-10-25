@@ -14,12 +14,8 @@ import PlatsCrad from '../components/cards/PlatsCard';
 
 
 
- function SelectPlatsContainer() {
-    const [age, setAge] = React.useState('');
+ export function SelectPlatsContainer() {
   
-    const handleChange = (event) => {
-      setAge(event.target.value);
-    };
   
     return (
       <div className='row justify-content-between pb-4' >
@@ -121,11 +117,11 @@ function Accueil() {
                 </div>
                 <div className="container py-5">
                     <div className="row justify-content-start align-items-center">
-                        <div className="col-md-7 col-sm-10 col-12">
+                        <div  className="col-md-7 col-sm-10 col-12">
                             <h1>
                             Le Lorem Ipsum est simplement du faux 
                             </h1>
-                            <h2>
+                            <h2 style={{zIndex:10,position:"relative"}}>
                             texte employé dans la composition et la mise en page avant impression
                             </h2>
                         </div>
@@ -139,10 +135,10 @@ function Accueil() {
                 <div className='col-5 img-bg-categorie-contenair'>
                     <Image src={riz} alt="bg-section-container" />
                 </div>
-                <div className='container py-5'>
+                <div   className='container py-5'>
                     <div className="row justify-content-center align-items-center">
                         <div className="col-lg-8 col-md-7 col-sm-10 col-12 text-center">
-                            <h1>
+                            <h1 style={{zIndex:10,position:"relative"}} >
                             Le Lorem Ipsum est simplement du faux 
                             </h1>
                         </div>

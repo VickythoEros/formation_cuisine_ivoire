@@ -74,7 +74,7 @@
 
 .img-bg-categorie-contenair img{
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     top: -10rem;
 }
 .accueil-categorie-section h1{
