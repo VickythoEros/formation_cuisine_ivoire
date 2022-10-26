@@ -1,10 +1,9 @@
-
-import {SelectPlatsContainer} from "./Accueil"
+import * as React from 'react';
+import Pagination from '@mui/material/Pagination';
+import {SelectPlatsContainer} from "./Accueil";
 import NavbarApp from '../components/NavbarApp';
-import bgChef from "../assets/images/accueil/bg-chef.png"
-import riz from "../assets/images/accueil/riz.png"
-import foutou from "../assets/images/accueil/foutou.png"
 import PlatsCrad from '../components/cards/PlatsCard';
+
 
 import "../assets/css/Cours.css"
 
@@ -13,13 +12,13 @@ export default function Cours(){
     return(
         <main className="cours-main-container" >
             <NavbarApp />
-            <section className='accueil-liste-cours-section'>
+            <section className='cours-liste-cours-section'>
                 {/* <div style={{position:'absolute',zIndex:3,right:0,bottom:'-15rem'}} className='col-5 img-bg--contenair'>
                         <Image src={riz} alt="bg-section-container" />
                     </div> */}
                 <div className='container py-5'>
                     <div className='row justify-content-start align-items-center'>
-                        <div className='col-lg-7 col-md-8 col-sm-10 col-11 text-start'>
+                        <div className='col-lg-10 col-md-10 col-sm-10 col-12 text-start'>
                             <h1>
                                 Le Lorem Ipsum est simplement du faux 
                             </h1>
@@ -45,6 +44,14 @@ export default function Cours(){
                         <PlatsCrad />
                         <PlatsCrad />
                         <PlatsCrad />
+                        <PlatsCrad />
+                        <PlatsCrad />
+                        <PlatsCrad />
+                    </div>
+                    <div className="row ">
+                        <div className='col-md-8 col-12'>
+                            <Pagination count={10} size="large" />
+                        </div>
                     </div>
                 </div>
             </section>

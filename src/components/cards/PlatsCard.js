@@ -16,7 +16,7 @@ export default function PlatsCrad() {
     }
     
     return (
-      <Box style={{zIndex:3}} className='my-4 bg-white py-4 px-4' maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+      <Box style={{zIndex:3}} className='my-4 bg-white py-4 px-4 shadow' maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
         <Image src={property.imageUrl} alt={property.imageAlt} />
   
         <Box p='6'>

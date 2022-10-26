@@ -3,23 +3,32 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import "../assets/css/NavbarApp.css"
 
 
 function NavbarApp() {
-    const [bgColor,setBgColor] = useState('')
-    const [textColor,setTextColor] = useState('')
-    
+  const location =  useLocation()
+  const location_path = location.pathname ==="/"
+    const [bgColor,setBgColor] = useState(location_path ? "":"kz-bg-primary")
+    const [textColor,setTextColor] = useState(location_path ? "text-dark":"kz-text-color")
+
     useEffect(()=>{
         const handleScroll = e=>{
-            if(window.scrollY > 200){
-              setBgColor('kz-bg-primary fixed-top')
+          if(location_path ){
+            if(window.scrollY > 200 ){
+              setBgColor('kz-bg-primary')
               setTextColor('kz-text-color')
             }else{
               setBgColor('')
               setTextColor('text-dark')
             }
+          }else{
+            
+            setBgColor('kz-bg-primary')
+            setTextColor('kz-text-color')
+          }
+            
         }
 
         window.addEventListener("scroll",handleScroll)
@@ -31,7 +40,7 @@ function NavbarApp() {
 
   return (
     <>
-        <Navbar expand="md" className={`fixed-top py-md-4 py-3 ${bgColor} `}>
+        <Navbar expand="md" className={`${location_path?  "fixed-top": "shadow"} py-md-4 py-3 ${bgColor} `}>
           <Container >
             <Navbar.Brand className="fw-bolder text-uppercase" href="/">Cuisine-Formation</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />

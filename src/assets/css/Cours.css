@@ -1,0 +1,10 @@
+.cours-main-container .cours-liste-cours-section h1{
+        font-size: 40px;
+        display: block;
+        color: #000;
+        font-weight: 800;
+        /* text-transform: capitalize; */
+        line-height: 1.4;
+    
+    
+}

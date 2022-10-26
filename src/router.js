@@ -11,11 +11,22 @@ const appRoutes = [
         element: <Accueil />,
         errorElement: <ErrorPage />,
         // loader: donnée à charger sur la page
-        children:{
-            path:"/cours",
-            element:<Cours />,
-            // loader:
-        }
+        // children:{
+        //     path:"/cours",
+        //     element:<Cours />,
+        //     // loader:
+        // }
+    },
+    {
+        path:"/cours",
+        element: <Cours />,
+        errorElement: <ErrorPage />,
+        // loader: donnée à charger sur la page
+        // children:{
+        //     path:"/cours",
+        //     element:<Cours />,
+        //     // loader:
+        // }
     }
 ]
 
