@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Pagination from '@mui/material/Pagination';
 import {SelectPlatsContainer} from "./Accueil";
 import NavbarApp from '../components/NavbarApp';
 import PlatsCrad from '../components/cards/PlatsCard';
@@ -50,7 +49,7 @@ export default function Cours(){
                     </div>
                     <div className="row ">
                         <div className='col-md-8 col-12'>
-                            <Pagination count={10} size="large" />
+                           {/* pagination content */}
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,11 @@
 import { Box,Image,Badge } from '@chakra-ui/react'
 import { StarIcon } from '@chakra-ui/icons'
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function PlatsCrad() {
+  const navigate = useNavigate()
     const property = {
       imageUrl: 'https://media.nouvelobs.com/ext/uri/ureferentiel.nouvelobs.com/file/16637994.jpg',
       imageAlt: 'Rear view of modern home with pool',
@@ -14,9 +16,11 @@ export default function PlatsCrad() {
       reviewCount: 34,
       rating: 4,
     }
+
+    
     
     return (
-      <Box style={{zIndex:3}} className='my-4 bg-white py-4 px-4 shadow' maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+      <Box onClick={()=>navigate('/cours/1')} style={{zIndex:3}} className='my-4 bg-white py-4 px-4 shadow' maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
         <Image src={property.imageUrl} alt={property.imageAlt} />
   
         <Box p='6'>
