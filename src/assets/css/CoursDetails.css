@@ -54,7 +54,7 @@
     
 }
 
-.cours-details-description-section p {
+/* .cours-details-description-section p {
     font-size: 25px;
     display: block;
     color: rgb(0, 0, 0);
@@ -62,4 +62,58 @@
     font-weight: 300;
     line-height: 1.4;
     
+} */
+
+
+.cours-details-description-section .description-contenu-cours{
+
 }
+
+.cours-details-description-section .description-contenu-cours h2{
+    font-size: 25px;
+    display: block;
+    color: #000000e2;
+ 
+    font-weight: 800;
+    /* text-transform: capitalize; */
+    line-height: 1.4;
+    
+}
+
+.cours-details-description-section .description-contenu-cours p{
+    font-size: 18px;
+    display: block;
+    color: #000000c6;
+    font-weight: normal;
+    /* text-transform: capitalize; */
+    line-height: 1.5;
+}
+
+/* 
+.cours-details-description-section .description-prerequis h3{
+    font-size: 20px;
+    display: block;
+    color: #276137e2;
+    font-weight: 800;
+    text-transform: capitalize;
+    line-height: 1.4;
+    
+} */
+
+.cours-details-description-section .description-objectifs-cours ul {
+    font-size: 18px;
+    display: block;
+    color: #000000c6;
+    font-weight: normal;
+    /* text-transform: capitalize; */
+    line-height: 1.5;
+}
+.cours-details-description-section .description-prerequis ul {
+    font-size: 18px;
+    display: block;
+    color: #000000c6;
+    font-weight: normal;
+    /* text-transform: capitalize; */
+    line-height: 1.5;
+}
+
