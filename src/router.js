@@ -2,6 +2,7 @@ import Accueil from "./views/Accueil";
 import Cours from "./views/Cours";
 import CoursDetails from "./views/CoursDetails";
 import ErrorPage from "./views/ErrorPage";
+import Tutoriel from "./views/Tutoriel";
 
 
 
@@ -27,7 +28,11 @@ const appRoutes = [
         path:"/cours/:coursId",
         element: <CoursDetails />,
         errorElement: <ErrorPage />,
-        
+    },
+    {
+        path:"/cours/:coursId/tutoriel",
+        element: <Tutoriel />,
+        errorElement: <ErrorPage />,
     }
 ]
 

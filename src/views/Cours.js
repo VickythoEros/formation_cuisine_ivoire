@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {SelectPlatsContainer} from "./Accueil";
-import NavbarApp from '../components/NavbarApp';
+import NavbarApp from '../components/generics/NavbarApp';
 import PlatsCrad from '../components/cards/PlatsCard';
 
 

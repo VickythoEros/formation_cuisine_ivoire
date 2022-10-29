@@ -4,7 +4,7 @@ import {Search2Icon } from '@chakra-ui/icons'
 
 
 import '../assets/css/Accueil.css'
-import NavbarApp from '../components/NavbarApp';
+import NavbarApp from '../components/generics/NavbarApp';
 import CategorieCard from '../components/cards/Categorie';
 
 import bgChef from "../assets/images/accueil/bg-chef.png"
