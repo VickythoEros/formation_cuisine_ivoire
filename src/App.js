@@ -1,4 +1,5 @@
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+import { ProSidebarProvider } from 'react-pro-sidebar';
 import { ChakraProvider } from '@chakra-ui/react'
 import './App.css';
 import { appRoutes } from './router';
@@ -16,7 +17,9 @@ const router = createBrowserRouter(
 function App() {
   return( 
    <ChakraProvider>
-    <RouterProvider router={router} />
+    <ProSidebarProvider>
+      <RouterProvider router={router} />
+    </ProSidebarProvider>
   </ChakraProvider>
   )
 }

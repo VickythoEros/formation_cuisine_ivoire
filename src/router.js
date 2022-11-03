@@ -3,6 +3,7 @@ import Cours from "./views/Cours";
 import CoursDetails from "./views/CoursDetails";
 import ErrorPage from "./views/ErrorPage";
 import Tutoriel from "./views/Tutoriel";
+import Tutoriel1 from "./views/Tutoriel1";
 
 
 
@@ -32,6 +33,11 @@ const appRoutes = [
     {
         path:"/cours/:coursId/tutoriel",
         element: <Tutoriel />,
+        errorElement: <ErrorPage />,
+    }, 
+    {
+        path:"/cours/:coursId/tutoriel1",
+        element: <Tutoriel1 />,
         errorElement: <ErrorPage />,
     }
 ]

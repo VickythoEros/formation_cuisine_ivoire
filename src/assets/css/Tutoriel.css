@@ -1,3 +1,8 @@
 .tutoriel-main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tutoriel-main .tutoriel-main-side-content{
     
 }
