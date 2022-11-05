@@ -10,7 +10,7 @@ export default function Sidebar(){
 			<div className="sidebar-content js-simplebar">
 				<a className="sidebar-brand" href="#">
 					<span className="align-middle pb-5">Progression</span>
-					<Steps current={1}>
+					<Steps currentStatus='process' current={2}>
 						<Steps.Item />
 						<Steps.Item />
 						<Steps.Item />

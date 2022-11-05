@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link, useLocation } from 'react-router-dom';
-import "../../assets/css/NavbarApp.css"
+import "../../assets/css/generics/NavbarApp.css"
 
 
 function NavbarApp() {

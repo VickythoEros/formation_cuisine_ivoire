@@ -1,0 +1,16 @@
+.description-component h2{
+    font-size: 25px;
+    display: block;
+    color: #000000e2;
+    font-weight: 800;
+    line-height: 1.4;
+    
+}
+
+.description-component p{
+    font-size: 18px;
+    display: block;
+    color: #000000c6;
+    font-weight: normal;
+    line-height: 1.5;
+}

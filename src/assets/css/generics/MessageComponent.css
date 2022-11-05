@@ -1,0 +1,8 @@
+.message-component ul {
+    font-size: 18px;
+    display: block;
+    color: #000000c6;
+    font-weight: normal;
+    /* text-transform: capitalize; */
+    line-height: 1.5;
+}

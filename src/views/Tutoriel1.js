@@ -1,11 +1,22 @@
-import { useEffect } from "react";
-import NavbarApp from "../components/generics/NavbarApp";
-
+// import { useEffect } from "react";
 import { Player,BigPlayButton  } from 'video-react';
-import "video-react/dist/video-react.css"; 
-import '../assets/template/css/app.css'
+import { 
+    Button,
+    } from "@chakra-ui/react";
+
+import { ArrowForwardIcon,ArrowBackIcon,} from "@chakra-ui/icons";
+    
+import NavbarApp from "../components/generics/NavbarApp";
 import Navbar from "../components/utils/tutoriels/Navbar";
 import Sidebar from "../components/utils/tutoriels/Sidebar";
+import DescriptionComponent from "../components/generics/DescriptionComponent";
+import MessageComponent from "../components/generics/MessageComponent";
+import { contentDescription, messagesItems } from "./CoursDetails";
+
+import "video-react/dist/video-react.css"; 
+import '../assets/template/css/app.css'
+import '../assets/css/Tutoriel1.css'
+
 
 export default function Tutoriel1(){
 
@@ -18,10 +29,10 @@ export default function Tutoriel1(){
             <Sidebar />
             <div className="main">
                 <Navbar />
-                <main className="content">
-                    <div className="container-fluid p-0">
+                <main className="content tutoriel1">
+                    <div className="container">
                         <div className="row justify-content-start align-items-center">
-                            <div className="col-12">
+                            <div className="col-12 tutoriel1-header-title">
                                 <h3 className="fw-bolder" >
                                     Titre de la leçon en cours de lecture
                                 </h3>
@@ -39,6 +50,32 @@ export default function Tutoriel1(){
                                 <BigPlayButton position="center" />
                             </Player>
                             </div>
+                        </div>
+
+                         {/*  Description du contenu */}
+                        <DescriptionComponent title="Description du contenu" content={contentDescription} />
+
+                        {/*  Objectifs pédagogiques du cours */}
+                        <MessageComponent type="success" items={messagesItems} header='Objectifs pédagogiques du cours' />
+
+                        {/*  Prérequis pour ce cours */}
+                        <MessageComponent type="info" items={messagesItems} header='Prérequis pour ce cours' />
+
+                        <div className='d-flex justify-content-evenly aling-items-center py-5'>
+                                <Button 
+                                    size='lg'
+                                    leftIcon={<ArrowBackIcon />}
+                                    colorScheme='green' 
+                                    variant='solid'>
+                                    Leçon précédente
+                                </Button>
+                                <Button 
+                                    size='lg'
+                                    rightIcon={<ArrowForwardIcon />} 
+                                    colorScheme='green'
+                                    variant='solid'>
+                                    Leçon suivante
+                                </Button>
                         </div>
                     </div>
                 </main>

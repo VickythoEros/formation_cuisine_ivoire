@@ -1,4 +1,9 @@
-.cours-details-title-section h1{
+
+.connexion-form-content{
+    width: 25rem;
+}
+
+.connexion-form-content h2{
     font-size: 30px;
     display: block;
     color: rgb(0, 0, 0);
@@ -6,6 +11,4 @@
     line-height: 1.4;
 
 }
-
-
 

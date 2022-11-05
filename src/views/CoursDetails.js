@@ -1,26 +1,23 @@
-import Message  from 'rsuite/Message';
 import { 
     Image,
-    ListItem,
-    UnorderedList,
     Button, 
     } from "@chakra-ui/react";
-import NavbarApp from "../components/generics/NavbarApp";
-
 import {ArrowForwardIcon, } from "@chakra-ui/icons"
-// import foutou from "../assets/images/accueil/foutou.png"
 
-// import sauce_header from "../assets/images/cours_details/sauce_arrachide.jpg"
-
-
-import "../assets/css/CoursDetails.css"
+import NavbarApp from "../components/generics/NavbarApp";
 import SectionHeader from '../components/utils/course/SectionHeader';
 import SectionCourseLessonList from '../components/utils/course/SectionCourseLessonList';
+
+import "../assets/css/CoursDetails.css"
+import MessageComponent from "../components/generics/MessageComponent";
+import DescriptionComponent from "../components/generics/DescriptionComponent";
 
 
   
 
+export const messagesItems=["Lorem ipsum dolor sit amet","Consectetur adipiscing elit","Lorem ipsum dolor sit amet","Facilisis in pretium nisl aliquet"]
 
+export const contentDescription = "  On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes)."
 
 export default function CoursDetails(){
 
@@ -54,49 +51,18 @@ export default function CoursDetails(){
                             <Image className="shadow rounded" src={`https://villamaasai.fr/wp-content/uploads/2019/07/Poisson_Sauce_claire.jpeg`} alt="bg-section-container" />
                         </div>
                     </div>
-                    <div className="row justify-content-center align-items-center">
-                        <div className="col-12 description-contenu-cours">
-                            <h2>
-                                Description du contenu
-                            </h2>
-                            <p className="py-3" >
-                            On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).
-  
-                            </p>
-                        </div>
-                    </div>
+                   
+                    {/*  Description du contenu */}
+                    <DescriptionComponent title="Description du contenu" content={contentDescription} />
 
-                    <div className="row justify-content-center align-items-center description-objectifs-cours py-md-3 py-4">
-                        <div className="col-12">
-                            <Message showIcon type="info" header={<p style={{fontSize:"18px",fontWeight:"bold"}} >
-                                Objectifs pédagogiques du cours
-                            </p> } >
-                                <UnorderedList className="py-3 ps-md-5 ps-sm-3 ps-0">
-                                    <ListItem>Lorem ipsum dolor sit amet</ListItem>
-                                    <ListItem>Consectetur adipiscing elit</ListItem>
-                                    <ListItem>Integer molestie lorem at massa</ListItem>
-                                    <ListItem>Facilisis in pretium nisl aliquet</ListItem>
-                                </UnorderedList>
-                            </Message>
-                           
-                        </div>
-                    </div>
+                    {/*  Objectifs pédagogiques du cours */}
+                    <MessageComponent type="success" items={messagesItems} header='Objectifs pédagogiques du cours' />
                     
-                    <div className="row justify-content-center align-items-center description-prerequis py-md-4 py-4">
-                        <div className="col-12">
-                            <Message showIcon type="warning" header={<p style={{fontSize:"18px",fontWeight:"bold"}} >
-                                Prérequis
-                            </p> } >
-                                <UnorderedList className="py-3 ps-md-5 ps-sm-3 ps-0">
-                                    <ListItem>Lorem ipsum dolor sit amet</ListItem>
-                                    <ListItem>Consectetur adipiscing elit</ListItem>
-                                    <ListItem>Integer molestie lorem at massa</ListItem>
-                                    <ListItem>Facilisis in pretium nisl aliquet</ListItem>
-                                </UnorderedList>
-                            </Message>
-                           
-                        </div>
-                    </div>
+                    {/*  Prérequis pour ce cours */}
+                    <MessageComponent type="info" items={messagesItems} header='Prérequis pour ce cours' />
+                  
+                    
+                    
                 </div>
             </section>
 
