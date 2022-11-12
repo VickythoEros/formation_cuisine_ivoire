@@ -13,6 +13,33 @@ import foutou from "../assets/images/accueil/foutou.png"
 import PlatsCrad from '../components/cards/PlatsCard';
 
 
+const platsList = [
+    {
+        imageUrl: 'https://recettesdafrique.com/wp-content/uploads/2022/04/Sauce-graine-a-la-queue-de-boeuf.jpg',
+        imageAlt: 'Sauce Graine',
+        title: 'sauce graine',
+        description: 'Du nord au sud, de l’est à l’ouest, elle est appréciée de tous en Côte d’Ivoire. La sauce graine est faite à base de noix de palme cuits et pilés au mortier, dont le jus est extrait et utilisé pour la recette.',
+        views: 204,
+        rating: 4,
+    },
+    {
+        imageUrl: 'https://recettes.africa/wp-content/uploads/2020/03/sauce-ntro-750x500.jpg',
+        imageAlt: 'Sauce N’tro',
+        title: 'Sauce N’tro',
+        description: 'Attribuée aux seuls peuples de l’ouest, la sauce graine est désormais la plus consommée de tout le pays. Du nord au sud, de l’est à l’ouest, elle est appréciée de tous en Côte d’Ivoire. La sauce graine est faite à base de noix de palme cuits et pilés au mortier, dont le jus est extrait et utilisé pour la recette. ',
+        views: "54",
+        rating: 3,
+    },
+    {
+        imageUrl: 'https://discover-ivorycoast.com/wp-content/uploads/2019/02/Foutou-Banane-2-1024x683.jpg',
+        imageAlt: 'Kabato',
+        title: 'Kabato',
+        description: "Kabato est un plat originaire du nord de la Côte d'Ivoire,Il est consommé en Côte d'Ivoire généralement par le peuple malinké du nord appelé communément dioula. C'est aussi un mets de référence chez le peuple Sénoufo leur voisin direct.",
+        views: 102,
+        rating: 5,
+    }
+]
+
 
  export function SelectPlatsContainer() {
   
@@ -59,15 +86,18 @@ function Accueil() {
                 <div className="container">
                     <div className="row justify-content-center align-items-center ">
                         <div className="col-md-8 col-sm-10 col-11 text-center">
-                            <h1>
-                            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression
+                            <h1 >
+                              Bienvenue sur la meilleure plateforme de formation culinaire ivoirienne
                             </h1>
+                            <p>
+                                Retrouvez le plaisir de cuisiner à l'ancienne
+                            </p>
                         </div>
                         <div className="row justify-content-center align-items-center pt-md-5">
                             <div className="col-md-8 text-center">
                             <Button
                             className="px-md-5 px-3" colorScheme='orange' size='lg'>
-                                Voir la liste des fromations
+                                Voir la liste des formations
                             </Button>
                             </div>
                            
@@ -84,30 +114,28 @@ function Accueil() {
                     <div className='row justify-content-start align-items-center'>
                         <div className='col-lg-7 col-md-8 col-sm-10 col-11 text-start'>
                             <h1>
-                                Le Lorem Ipsum est simplement du faux 
+                                Les cours les plus appréciés 
                             </h1>
                         </div>
                     </div>
                 </div>
                 
-                <div className="container">
+                {/* <div className="container">
                     
                     <div className='row'>
                         <SelectPlatsContainer />
                     </div>
-                </div>
+                </div> */}
                 <div className='container'>
-                    <div className='row justify-content-start'>
+                    {/* <div className='row justify-content-start'>
                         <div className='col-11'>
                             <p className='fw-bolder fs-3 text-decoration-underline ms-md-4'  >
                                 10 cours
                             </p>
                         </div>
-                    </div>
+                    </div> */}
                     <div className='row justify-content-evenly align-items-center'>
-                        <PlatsCrad />
-                        <PlatsCrad />
-                        <PlatsCrad />
+                       {  platsList?.map((plat,index)=> <PlatsCrad key={index} platItem={plat} /> ) }
                     </div>
                 </div>
             </section>

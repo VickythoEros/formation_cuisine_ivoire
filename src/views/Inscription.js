@@ -31,14 +31,14 @@ export default function Inscription(){
             <section className="inscription-section">
                 <div className="container py-5">
                     <div className="row justify-content-center align-items-center ">
-                    <div className='col-md-6'>
+                    <div className='col-lg-8 d-md-none d-lg-block d-none'>
                        <Image
                                     className='mx-auto text-center'
                                     src={imgBg3}
                                     alt='login icon'
                                     />
                        </div>
-                        <div className="col-md-6  ">
+                        <div className="col-lg-4 col-md-8 col-sm-11 col-11">
                         <div className="inscription-form-content rounded shadow p-5 bg-white mx-auto ">
                             <h2 style={{color:'orangered'}}  className="text-center pb-4">Inscription</h2>
                            

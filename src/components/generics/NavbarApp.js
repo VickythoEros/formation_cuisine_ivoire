@@ -11,7 +11,8 @@ function NavbarApp() {
   const location =  useLocation()
   const location_path = location.pathname ==="/"
     const [bgColor,setBgColor] = useState(location_path ? "":"kz-bg-primary")
-    const [textColor,setTextColor] = useState(location_path ? "text-dark":"kz-text-color")
+    const [textColor,setTextColor] = useState(location_path ? "text-white":"kz-text-color")
+    const [textBrandColor,setTextBrandColor] = useState('text-white')
 
     useEffect(()=>{
         const handleScroll = e=>{
@@ -19,18 +20,22 @@ function NavbarApp() {
             if(window.scrollY > 200 ){
               setBgColor('kz-bg-primary')
               setTextColor('kz-text-color')
+              setTextBrandColor('text-dark')
             }else{
               setBgColor('')
-              setTextColor('text-dark')
+              setTextColor('text-white')
+              setTextBrandColor('text-white')
             }
           }else{
             
             setBgColor('kz-bg-primary')
             setTextColor('kz-text-color')
+            setTextBrandColor('text-dark')
           }
             
         }
 
+        handleScroll()
         window.addEventListener("scroll",handleScroll)
 
         return ()=>{
@@ -42,7 +47,7 @@ function NavbarApp() {
     <>
         <Navbar expand="md" className={`${location_path?  "fixed-top": "shadow"} py-md-4 py-3 ${bgColor} `}>
           <Container >
-            <Navbar.Brand className="fw-bolder text-uppercase" href="/">Cuisine-Formation</Navbar.Brand>
+            <Navbar.Brand className={`fw-bolder text-uppercase ${textBrandColor} `} href="/">Quizzine</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-md`}
