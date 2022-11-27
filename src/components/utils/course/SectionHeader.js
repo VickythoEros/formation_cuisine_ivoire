@@ -9,18 +9,18 @@ export default function SectionHeader(){
                     <div className="row justify-content-start align-items-center py-5">
                         <div className="col-lg-10 col-md-10 col-sm-11 col-12">
                             <h1>
-                            Le Lorem Ipsum est simplement du faux 
+                            Apprenez à cuisiner la sauce graine
                             </h1>
                         </div>
                     </div>
                     <div className="row justify-content-start align-items-center">
                         <div className="col-md-6 py-2">
-                            <div className="d-flex justify-content-between ">
+                            <div className="d-flex justify-content-between align-items-center">
                                 <p>
-                                <i className="fa-solid fa-signal"></i> Dificile
+                                    <i className="fa-solid fa-signal"></i> Moyen
                                 </p>
                                 <p>
-                                    <i className="fa-regular fa-clock "></i> 2 Heures
+                                    <i className="fa-regular fa-clock "></i> 4 Heures
                                 </p>
                                 
                                 <p>

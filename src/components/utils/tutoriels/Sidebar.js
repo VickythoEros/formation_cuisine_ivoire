@@ -10,8 +10,7 @@ export default function Sidebar(){
 			<div className="sidebar-content js-simplebar">
 				<a className="sidebar-brand" href="#">
 					<span className="align-middle pb-5">Progression</span>
-					<Steps currentStatus='process' current={2}>
-						<Steps.Item />
+					<Steps currentStatus='process' current={0}>
 						<Steps.Item />
 						<Steps.Item />
 						<Steps.Item />
@@ -25,12 +24,17 @@ export default function Sidebar(){
 
 					<li className="sidebar-item active">
 						<Link className="sidebar-link d-flex align-items-center text-decoration-none" to="/cours/1/tutoriel1">
-						<CalendarIcon /> <span className="align-middle">Leçon 1</span>
+						<CalendarIcon /> <span className="align-middle">Les bases du cours  </span>
 						</Link>
 					</li>
 					<li className="sidebar-item ">
 						<Link className="sidebar-link d-flex align-items-center text-decoration-none" to="/cours/1/tutoriel1">
-						<CalendarIcon /> <span className="align-middle">Leçon 2</span>
+						<CalendarIcon /> <span className="align-middle">Préparation de la graine </span>
+						</Link>
+					</li>
+					<li className="sidebar-item ">
+						<Link className="sidebar-link d-flex align-items-center text-decoration-none" to="/cours/1/tutoriel1">
+						<CalendarIcon /> <span className="align-middle">Préparation de la sauce </span>
 						</Link>
 					</li>
 				

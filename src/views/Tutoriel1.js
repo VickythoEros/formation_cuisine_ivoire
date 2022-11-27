@@ -34,16 +34,16 @@ export default function Tutoriel1(){
                         <div className="row justify-content-start align-items-center">
                             <div className="col-12 tutoriel1-header-title">
                                 <h3 className="fw-bolder" >
-                                    Titre de la leçon en cours de lecture
+                                    Introduction au cours
                                 </h3>
-                                <p>Sous titre du cours</p>
+                                <p>les bases de la préparation</p>
                             </div>
                         </div>
                         <div className="row justify-content-center align-items-center">
                             <div className="col-md-10 py-4 col-12">
                             <Player
                                 playsInline
-                                poster="https://media.istockphoto.com/photos/caribbean-lamb-and-sweet-potato-curry-picture-id162980784?k=20&m=162980784&s=612x612&w=0&h=pl8lLJDKy2yhsMGwNn-j_tbpdNorgsDfGbOQ05Kxyqw="
+                                poster="https://recettesdafrique.com/wp-content/uploads/2022/04/Sauce-graine-a-la-queue-de-boeuf.jpg"
                                 src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
                             >
                                

@@ -17,7 +17,11 @@ import DescriptionComponent from "../components/generics/DescriptionComponent";
 
 export const messagesItems=["Lorem ipsum dolor sit amet","Consectetur adipiscing elit","Lorem ipsum dolor sit amet","Facilisis in pretium nisl aliquet"]
 
-export const contentDescription = "  On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes)."
+
+
+export const messagesItemsObjectifs=["Lorem ipsum dolor sit amet","Consectetur adipiscing elit","Lorem ipsum dolor sit amet","Facilisis in pretium nisl aliquet"]
+
+export const contentDescription = " Attribuée aux seuls peuples de l’ouest, la sauce graine est désormais la plus consommée de tout le pays. Du nord au sud, de l’est à l’ouest, elle est appréciée de tous en Côte d’Ivoire. La sauce graine est faite à base de noix de palme cuits et pilés au mortier, dont le jus est extrait et utilisé pour la recette."
 
 export default function CoursDetails(){
 
@@ -34,7 +38,7 @@ export default function CoursDetails(){
                     <div className="row justify-content-start align-items-center py-5">
                         <div className="col-lg-10 col-md-10 col-sm-11 col-12">
                             <h1>
-                                Le Lorem Ipsum est simplement 
+                                Tout savoir du contenu de ce cours
                             </h1>
                             <p>
                                 Dernière mise à jours : {new Date().toLocaleDateString()} 
@@ -48,7 +52,7 @@ export default function CoursDetails(){
                 <div className="container">
                     <div className="row justify-content-center align-items-center">
                         <div className="col-lg-7 col-md-8 col-sm-10 col-11 text-center pb-2 pb-md-4 ">
-                            <Image className="shadow rounded" src={`https://villamaasai.fr/wp-content/uploads/2019/07/Poisson_Sauce_claire.jpeg`} alt="bg-section-container" />
+                            <Image className="shadow rounded" src={`https://recettesdafrique.com/wp-content/uploads/2022/04/Sauce-graine-a-la-queue-de-boeuf.jpg`} alt="bg-section-container" />
                         </div>
                     </div>
                    
