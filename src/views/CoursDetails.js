@@ -35,8 +35,8 @@ export default function CoursDetails(){
     const [descriptionCours , setDescriptionCours] = useState('')
 
     const onClickStartCourse =()=>{
-        
-        navigate(`/cours/${coursId}/tutoriel1`,{replace:true})
+
+        navigate(`/cours/${coursId}/tutoriel1/1`,{replace:true})
 
     }
 
