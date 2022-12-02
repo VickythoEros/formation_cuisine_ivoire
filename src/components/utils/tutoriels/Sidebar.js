@@ -3,7 +3,8 @@ import { CalendarIcon } from '@chakra-ui/icons'
 import { Steps } from 'rsuite';
 
 
-export default function Sidebar(){
+export default function Sidebar({coursLessons}){
+
 
     return(
         <nav id="sidebar" className="sidebar js-sidebar">
@@ -21,25 +22,15 @@ export default function Sidebar(){
 					<li className="sidebar-header fw-bolder fs-5">
 						Structure du cours
 					</li>
-
-					<li className="sidebar-item active">
+					{coursLessons && coursLessons.map((lesson,index)=>{
+						let lessonInfo = lesson?.attributes
+						return (<li key={index} className="sidebar-item active">
 						<Link className="sidebar-link d-flex align-items-center text-decoration-none" to="/cours/1/tutoriel1">
-						<CalendarIcon /> <span className="align-middle">Les bases du cours  </span>
+						<CalendarIcon /> <span className="align-middle"> {lessonInfo.title} </span>
 						</Link>
-					</li>
-					<li className="sidebar-item ">
-						<Link className="sidebar-link d-flex align-items-center text-decoration-none" to="/cours/1/tutoriel1">
-						<CalendarIcon /> <span className="align-middle">Préparation de la graine </span>
-						</Link>
-					</li>
-					<li className="sidebar-item ">
-						<Link className="sidebar-link d-flex align-items-center text-decoration-none" to="/cours/1/tutoriel1">
-						<CalendarIcon /> <span className="align-middle">Préparation de la sauce </span>
-						</Link>
-					</li>
-				
-
-				
+						</li>)
+					})
+					}
 				</ul>
 			</div>
 		</nav>

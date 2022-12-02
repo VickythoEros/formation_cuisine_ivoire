@@ -51,6 +51,10 @@ const appRoutes = [
         path:"/cours/:coursId/tutoriel1",
         element: <Tutoriel1 />,
         errorElement: <ErrorPage />,
+
+        path:"/cours/:coursId/tutoriel1/:tutorielId",
+        element: <Tutoriel1 />,
+        errorElement: <ErrorPage />,
     }
 ]
 

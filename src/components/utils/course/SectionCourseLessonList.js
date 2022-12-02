@@ -7,10 +7,43 @@ import {
     AccordionPanel,
     AccordionIcon,
      } from "@chakra-ui/react";
+import { useState,useEffect } from "react";
 
 
 
-export default function SectionCourseLessonList(){
+const AccordionItemsElements = ({index,title,description})=>{
+
+    return(
+        <AccordionItem>
+        <h2 style={{fontSize:"20px",fontWeight:600}}>
+        <AccordionButton _expanded={{ bg: '#42bc87', color: 'white' }}>
+            <Box flex='1' textAlign='left'>
+            Leçon {index} : {title}
+            </Box>
+            <AccordionIcon />
+        </AccordionButton>
+        </h2>
+        <AccordionPanel>
+            <p style={{fontSize:"18px"}}>
+                {description}
+            </p>
+        </AccordionPanel>
+    </AccordionItem>
+    )
+}
+
+
+export default function SectionCourseLessonList({coursLessons}){
+
+    const [lessonsItems,setLessonsItems] = useState([])
+
+    console.log('coiurse : ',coursLessons)
+    useEffect(()=>{
+        let listLessons = coursLessons
+        listLessons.sort((fistLesson, secondLesson) => fistLesson.id - secondLesson.id);
+        setLessonsItems(listLessons)
+
+    },[coursLessons])
 
     return(
         <section className="section-course-lesson-list">
@@ -22,7 +55,19 @@ export default function SectionCourseLessonList(){
                             Les différentes leçons du cours
                         </h2>
                         <Accordion allowToggle>
-                            <AccordionItem>
+                        {lessonsItems && lessonsItems.map((lesson,index)=>{
+                            let lessonInfo = lesson?.attributes
+                            return(
+                                <AccordionItemsElements 
+                                    index={lesson.id}
+                                    title={lessonInfo.title}
+                                    description={lessonInfo.description}
+                                />
+                            )
+                        })
+                        }
+
+                            {/* <AccordionItem>
                                 <h2 style={{fontSize:"20px",fontWeight:600}}>
                                 <AccordionButton _expanded={{ bg: '#42bc87', color: 'white' }}>
                                     <Box flex='1' textAlign='left'>
@@ -76,7 +121,7 @@ export default function SectionCourseLessonList(){
                                     </p>
                                 </AccordionPanel>
                             </AccordionItem>
-                            
+                             */}
                         
                         </Accordion>
 

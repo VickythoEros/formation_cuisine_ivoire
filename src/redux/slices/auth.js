@@ -1,4 +1,4 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import {createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { USER_TOKEN_ITEM } from "../../api/constantes";
 import authServices from "../../services/auth.services";
 import { setMessage } from "./messages";
@@ -10,7 +10,10 @@ export const registerUser = createAsyncThunk(
     "auth/registerUser",
     async(payload,thunkAPI)=>{
         try {
+          console.log(payload)
+
             const response = await authServices.registerUser(payload)
+            console.log(response)
             thunkAPI.dispatch(setMessage(response.data.message))
         } catch (error) {
             console.error(error)
@@ -39,18 +42,19 @@ export const loginUser  =  createAsyncThunk(
 
 
 export const logoutUser = createAsyncThunk(
-    "auth/logout",
+    "auth/logoutUser",
     async () => {
     await authServices.logoutUser();
 });
   
 
 
-const initialState = userToken ? { isLoggedIn: true, user } : { isLoggedIn: false, user: null };
+const initialState = userToken ? { isLoggedIn: true, user: userToken } : { isLoggedIn: false, user: null };
   
 const authSlice = createSlice({
     name: "auth",
     initialState,
+    reducers: {},
     extraReducers: {
       [registerUser.fulfilled]: (state, action) => {
         state.isLoggedIn = false;

@@ -3,13 +3,13 @@ import { instanceAxios } from "../api/instance"
 
 
 
-const registerUser = (payload)=>{
-    return instanceAxios.post(payload)
+const registerUser = async(payload)=>{
+    const response =  await instanceAxios.post(payload)
 }
 
-const logoutUser = (payload)=>{
+const loginUser = (payload)=>{
      
-    const response = instanceAxios.post(payload)
+    const response = instanceAxios.post('/auth/local/register',payload)
     if(response.data.token){
         localStorage.setItem(USER_TOKEN_ITEM,response.data.token)
         return response.data
@@ -17,10 +17,12 @@ const logoutUser = (payload)=>{
    
 }
 
-const logout = ()=>{
+const logoutUser = ()=>{
     localStorage.removeItem(USER_TOKEN_ITEM)
 }
 
 
-export default authServices ={registerUser,loginUser,logoutUser}
+const authServices ={registerUser,loginUser,logoutUser}
+
+export default authServices
 

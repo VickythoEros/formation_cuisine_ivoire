@@ -4,11 +4,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link, useLocation } from 'react-router-dom';
+import { USER_TOKEN_ITEM } from '../../api/constantes';
 import "../../assets/css/generics/NavbarApp.css"
 
 
 function NavbarApp() {
   const location =  useLocation()
+  const [isLoggedIn,setIsLoggedIn] = useState(false)
   const location_path = location.pathname ==="/"
     const [bgColor,setBgColor] = useState(location_path ? "":"kz-bg-primary")
     const [textColor,setTextColor] = useState(location_path ? "text-white":"kz-text-color")
@@ -43,6 +45,11 @@ function NavbarApp() {
         }
     },[])
 
+
+    useEffect(()=>{
+      localStorage.getItem(USER_TOKEN_ITEM) && setIsLoggedIn(true)
+    },[localStorage.getItem(USER_TOKEN_ITEM)])
+
   return (
     <>
         <Navbar expand="md" className={`${location_path?  "fixed-top": "shadow"} py-md-4 py-3 ${bgColor} `}>
@@ -67,12 +74,25 @@ function NavbarApp() {
                   <Link className={`mx-md-5 text-decoration-none ${textColor} `}  to="/cours">
                     Cours
                   </Link>
-                  <Link className={`mx-md-5 text-decoration-none ${textColor} `}  to="/connexion">
+                  { !!!isLoggedIn ?
+                 (<>
+                   <Link className={`mx-md-5 text-decoration-none ${textColor} `}  to="/connexion">
                     Connexion
                   </Link>
                   <Link className={`mx-md-5 text-decoration-none ${textColor} `}  to="/inscription">
                     Inscription
                   </Link>
+                  </>):(
+                  <>
+                  <Link className={`mx-md-5 text-decoration-none ${textColor} `}  to="/mes_cours">
+                   Mes cours
+                 </Link>
+                  <Link className={`mx-md-5 text-decoration-none ${textColor} `}  to="/mon_profil">
+                   Mon profil
+                 </Link>
+
+                  </>)
+                  }
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

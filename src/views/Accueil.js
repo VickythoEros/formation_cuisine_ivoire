@@ -11,6 +11,9 @@ import bgChef from "../assets/images/accueil/bg-chef.png"
 import riz from "../assets/images/accueil/riz.png"
 import foutou from "../assets/images/accueil/foutou.png"
 import PlatsCrad from '../components/cards/PlatsCard';
+import { useState,useEffect } from 'react';
+import { instanceAxios } from '../api/instance';
+import { ControlPointDuplicateRounded } from '@mui/icons-material';
 
 
 const platsList = [
@@ -43,6 +46,7 @@ const platsList = [
 
  export function SelectPlatsContainer() {
   
+
   
     return (
       <div className='row justify-content-between pb-4' >
@@ -79,6 +83,32 @@ const platsList = [
 
 function Accueil() {
     
+    const [listcourses , setListCourses] = useState([])
+
+    useEffect(()=>{
+        let componentIsMounted = true
+        const controller = new AbortController()
+        
+        const getListCourses = async()=>{
+            try {
+                const response = await instanceAxios.get('/courses',{signal:controller.signal})
+                console.log(' data course ',response.data.data)
+                componentIsMounted && setListCourses(response.data.data)
+            } catch (error) {
+                console.error(error)
+                controller.abort()
+            }
+        }
+
+        getListCourses()
+
+        return()=>{
+            componentIsMounted = false
+            controller.abort()
+        }
+    },[])
+
+
     return(
         <main className="accueil-main">
             <NavbarApp />
@@ -113,7 +143,7 @@ function Accueil() {
                 <div className='container py-5'>
                     <div className='row justify-content-start align-items-center'>
                         <div className='col-lg-7 col-md-8 col-sm-10 col-11 text-start'>
-                            <h1>
+                            <h1 className='fw-bolder h1 ' >
                                 Les cours les plus appréciés 
                             </h1>
                         </div>
@@ -127,15 +157,8 @@ function Accueil() {
                     </div>
                 </div> */}
                 <div className='container'>
-                    {/* <div className='row justify-content-start'>
-                        <div className='col-11'>
-                            <p className='fw-bolder fs-3 text-decoration-underline ms-md-4'  >
-                                10 cours
-                            </p>
-                        </div>
-                    </div> */}
                     <div className='row justify-content-evenly align-items-center'>
-                       {  platsList?.map((plat,index)=> <PlatsCrad key={index} platItem={plat} /> ) }
+                       {  listcourses?.map((plat,index)=> <PlatsCrad key={plat.id} platItem={plat} /> ) }
                     </div>
                 </div>
             </section>
