@@ -2,55 +2,25 @@ import { Box,Image,Badge } from '@chakra-ui/react'
 import { StarIcon } from '@chakra-ui/icons'
 
 
-export default function CategorieCard() {
-    const property = {
-      imageUrl: 'https://media.nouvelobs.com/ext/uri/ureferentiel.nouvelobs.com/file/16637994.jpg',
-      imageAlt: 'Rear view of modern home with pool',
-      beds: 3,
-      baths: 2,
-      title: 'Modern home in city center in the heart of historic Los Angeles',
-      formattedPrice: '$1,900.00',
-      reviewCount: 34,
-      rating: 4,
-    }
+export default function CategorieCard({imageUrl,imageAlt,title,reviewCount,rating}) {
+
   
     return (
       <Box style={{zIndex:3}} className='my-4 bg-white py-4 px-4' maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
-        <Image src={property.imageUrl} alt={property.imageAlt} />
-  
+        <Image className='img-fluid  text-center mx-auto' src={imageUrl} alt={imageAlt} />
+
         <Box p='6'>
-          <Box display='flex' alignItems='baseline'>
-            <Badge borderRadius='full' px='2' colorScheme='teal'>
-              New
-            </Badge>
-            <Box
-              color='gray.500'
-              fontWeight='semibold'
-              letterSpacing='wide'
-              fontSize='xs'
-              textTransform='uppercase'
-              ml='2'
-            >
-              {property.beds} beds &bull; {property.baths} baths
-            </Box>
-          </Box>
-  
+        
           <Box
             mt='1'
             fontWeight='semibold'
-            as='h4'
-            lineHeight='tight'
+            as='h2'
             noOfLines={1}
           >
-            {property.title}
+            {title}
           </Box>
   
-          <Box>
-            {property.formattedPrice}
-            <Box as='span' color='gray.600' fontSize='sm'>
-              / wk
-            </Box>
-          </Box>
+      
   
           <Box display='flex' mt='2' alignItems='center'>
             {Array(5)
@@ -58,11 +28,11 @@ export default function CategorieCard() {
               .map((_, i) => (
                 <StarIcon
                   key={i}
-                  color={i < property.rating ? 'teal.500' : 'gray.300'}
+                  color={i < rating ? 'teal.500' : 'gray.300'}
                 />
               ))}
             <Box as='span' ml='2' color='gray.600' fontSize='sm'>
-              {property.reviewCount} reviews
+              {reviewCount} visites
             </Box>
           </Box>
         </Box>

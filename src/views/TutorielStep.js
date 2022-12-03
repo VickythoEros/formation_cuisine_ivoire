@@ -5,6 +5,7 @@ import { instanceAxios } from '../api/instance';
 import DescriptionComponent from "../components/generics/DescriptionComponent";
 import InfoSection from '../components/generics/InfoSection';
 import MessageComponent from "../components/generics/MessageComponent";
+import Quiz from '../components/utils/Quiz';
 import { contentDescription, messagesItems } from "./CoursDetails";
 
 const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sections= {data: []}})=>{
@@ -68,7 +69,11 @@ const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sec
            return <InfoSection title={section.title} description={section.description} />
         } )
         }
-         
+
+
+       <div className=''>
+            <Quiz title={""}  />
+       </div>
        
     </div>
     )
