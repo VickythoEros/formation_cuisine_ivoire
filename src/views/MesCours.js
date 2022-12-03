@@ -1,6 +1,7 @@
 import { 
     Image,
     Button, 
+    Heading
     } from "@chakra-ui/react";
 import {ArrowForwardIcon, } from "@chakra-ui/icons"
 import { useState,useEffect } from 'react';
@@ -75,9 +76,13 @@ export default function (){
                     </div>
                     
                     <div className='row justify-content-evenly align-items-center'>
-                       {  listCourses?.map((plat,index)=> {
+                       {  listCourses.length == 0 ? <Heading size='md'>Aucun cours</Heading> : listCourses.map((plat,index)=> {
                         console.log("Putting ", plat)
-                        return <CourseCard {...{attributes: plat}}  key={plat.id} id={plat.id} image={{data: { attributes: plat.image }}} />
+                        return <CourseCard {...{attributes: plat}}  
+                            key={plat.id} 
+                            id={plat.id} 
+                            is_followed={true}
+                            image={{data: { attributes: plat.image }}} />
                        } ) }
                     </div>
                   

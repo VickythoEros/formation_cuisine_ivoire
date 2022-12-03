@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { BASE_URL_FILE } from '../../api/constantes';
 
 
-export default function ({ id, image, ...plat }) {
+export default function ({ id, is_followed, image, ...plat }) {
   const navigate = useNavigate()
   // const [plat,setPlat] = useState(platItem)
   
@@ -21,6 +21,8 @@ export default function ({ id, image, ...plat }) {
         alignItems={'center'}
         justifyItems='center'
         h={450}
+        cursor='pointer'
+        onClick={()=>navigate(`/cours/${id}`)}  
         >
           <Box alignItems={'center'} justifyItems='center' flex={1} flexDirection='column' >
             <Image ml={30} height={250} width={250} borderRadius={250} src={`${BASE_URL_FILE}${image && image.data.attributes.url}`} alt={"image"} />
@@ -48,9 +50,16 @@ export default function ({ id, image, ...plat }) {
           >
             {plat?.attributes?.description.slice(0, 100)}
           </Box>
-          <Box 
-            onClick={()=>navigate(`/cours/${id}`)}  
-            className='p-2 offset-6 bg-primary text-light ' style={{borderRadius: 30, cursor: 'pointer'}} >Progresser</Box>
+          {
+            is_followed && (
+              <Box 
+                
+                className='p-2 offset-6 bg-primary text-light ' style={{borderRadius: 30, cursor: 'pointer'}} >
+                  Progresser
+                  </Box>
+
+            )
+          }
         
         </Box>
       </Box>
