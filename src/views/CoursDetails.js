@@ -144,7 +144,7 @@ export default function CoursDetails(){
                             {
                                 (coursDetails.data && coursDetails.data.attributes.participants.data && coursDetails.data.attributes.participants.data.findIndex(p => p.id == me.id) > -1 ) ? (
                                     <Button 
-                                        onClick={onClickStartCourse}
+                                        onClick={() => navigate(`/cours/${coursId}/tutoriel1/1`,{replace:true})}
                                         className='bg-success text-light'
                                         rightIcon={<ArrowForwardIcon />}
                                         // colorScheme='teal' 

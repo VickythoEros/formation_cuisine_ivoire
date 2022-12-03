@@ -42,7 +42,7 @@ export default function PlatsCrad({platItem}) {
           </Box>
   
   
-          <Box display='flex' mt='2' alignItems='center'>
+          {/* <Box display='flex' mt='2' alignItems='center'>
             {Array(5)
               .fill('')
               .map((_, i) => (
@@ -54,7 +54,7 @@ export default function PlatsCrad({platItem}) {
             <Box as='span' ml='2' color='gray.600' fontSize='sm'>
               {plat.views} vues
             </Box>
-          </Box>
+          </Box> */}
         </Box>
       </Box>
     )

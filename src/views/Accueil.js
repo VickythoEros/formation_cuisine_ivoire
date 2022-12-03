@@ -45,7 +45,7 @@ const propertyFoods = [{
     return (
       <div className='row justify-content-between pb-4' >
         <div className='col-lg-3 col-md-3 col-sm-6 col-11'>
-        <Select className='mx-3 my-2 shadow' placeholder='Ethnie' size='lg'>
+        {/* <Select className='mx-3 my-2 shadow' placeholder='Ethnie' size='lg'>
             <option value='option1'>Option 1</option>
             <option value='option2'>Option 2</option>
             <option value='option3'>Option 3</option>
@@ -58,7 +58,7 @@ const propertyFoods = [{
             <option value='option1'>Option 1</option>
             <option value='option2'>Option 2</option>
             <option value='option3'>Option 3</option>
-        </Select>
+        </Select> */}
         </div>
         <div className='col-lg-6 col-md-6 col-sm-11 col-11'>
         <InputGroup  className='mx-3 my-2 shadow'  size='lg' >

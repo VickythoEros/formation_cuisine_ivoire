@@ -8,6 +8,7 @@ import "../assets/css/Cours.css"
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { instanceAxios } from '../api/instance';
+import CourseCard from '../components/cards/CourseCard';
 
 export default function Cours(){
 
@@ -46,7 +47,7 @@ export default function Cours(){
         
         const getListCourses = async()=>{
             try {
-                const response = await instanceAxios.get('/courses',{signal:controller.signal})
+                const response = await instanceAxios.get('/courses?populate=*',{signal:controller.signal})
                 console.log(' data course ',response.data.data)
                 componentIsMounted && setListCourses(response.data.data)
             } catch (error) {
@@ -96,7 +97,12 @@ export default function Cours(){
                     </div>
                     
                     <div className='row justify-content-evenly align-items-center'>
-                       {  listCourses?.map((plat,index)=> <PlatsCrad key={plat.id} platItem={plat} /> ) }
+                       {  listCourses?.map((plat,index)=> {
+                        console.log("send ", plat)
+                        return (
+                            <CourseCard {...plat} key={plat.id}  id={plat.id} image={plat.attributes.image}   />
+                        )
+                       } ) }
                     </div>
                   
                     <div className="row ">

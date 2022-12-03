@@ -15,7 +15,7 @@ export default function SectionHeader({platItem, nb_students}){
                     <div className="row justify-content-start align-items-center py-5">
                         <div className="col-lg-10 col-md-10 col-sm-11 col-12">
                             <h1>
-                            Apprenez à cuisiner la {coursDetail?.title}
+                            {coursDetail?.title}
                             </h1>
                         </div>
                     </div>
