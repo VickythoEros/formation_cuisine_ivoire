@@ -1,6 +1,7 @@
-import { Radio, RadioGroup } from '@chakra-ui/react'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Radio } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 
+import '../../assets/css/utils/course/Quiz.css'
 
 const RadiosItems = ({name,title})=>{
 
@@ -16,10 +17,11 @@ const RadiosItems = ({name,title})=>{
 const Quiz =({title})=>{
 
     return(
-        <div className="container py-5 my-5">
+        <div className="container py-5">
             <div className="row justify-content-center align-items-center">
                 <div className="col-12">
-                    <div className="shadow p-4 rounded " style={{borderLeft:`5px solid orangered`}} >
+                    <div className="shadow p-4 rounded card-quiz" style={{borderLeft:`5px solid orangered`}} >
+                    
                         <h3 className='h3' > {title}  une louche - un couteau - quelques petit assiette caoutchouc  </h3>
                         <small> Veuillez selectionner votre response </small>
                         <div className=" ms-4 py-4">

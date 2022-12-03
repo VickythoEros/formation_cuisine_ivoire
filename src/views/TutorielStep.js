@@ -62,6 +62,7 @@ const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sec
         } */}
 
         {
+
         sections.data.map( ({attributes: section}) =>{ 
             if(  section.description === 'Objectif pédagoqiue de la leçon'){
                 return   <MessageComponent type="success" items={messagesItems} header='Objectifs pédagogiques du cours' />
@@ -71,7 +72,17 @@ const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sec
         }
 
 
-       <div className=''>
+       <div className='py-5'>
+            <div className='container'>
+                <div className='row justify-content-center align-items-center'>
+                    <div className='col-12'>
+                        <h2  className='fw-bolder h2' >
+                            Vérifiez vos connaissances
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <Quiz title={""}  />
             <Quiz title={""}  />
        </div>
        
