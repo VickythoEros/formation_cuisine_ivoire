@@ -22,7 +22,7 @@ export default function MessageComponent({type,items,header}){
                             {header}
                         </p> } >
                     <UnorderedList className="py-3 ps-md-5 ps-sm-3 ps-0 ">
-                        {
+                        { (typeof items === "string" ) ? <ListItem  > {items} </ListItem> :
                             items?.map((item,index)=> <ListItem key={index} > {item} </ListItem> )
                         }
                     </UnorderedList>

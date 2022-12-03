@@ -8,7 +8,7 @@ import MessageComponent from "../components/generics/MessageComponent";
 import Quiz from '../components/utils/Quiz';
 import { contentDescription, messagesItems } from "./CoursDetails";
 
-const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sections= {data: []}})=>{
+const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sections= {data: []},currentLessonIndex})=>{
     const [lesson, setLesson] = useState({})
 
     // useEffect(()=> {
@@ -64,10 +64,10 @@ const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sec
         {
 
         sections.data.map( ({attributes: section}) =>{ 
-            if(  section.description === 'Objectif pédagoqiue de la leçon'){
-                return   <MessageComponent type="success" items={messagesItems} header='Objectifs pédagogiques du cours' />
+            if(  section.title === 'Objectif pédagoqiue de la leçon'){
+                return   <MessageComponent type="success" items={section.description} header='Objectifs pédagogiques de la leçon' />
             }
-           return <InfoSection title={section.title} description={section.description} />
+           return <InfoSection currentLessonIndex={currentLessonIndex} title={section.title} description={section.description} />
         } )
         }
 
@@ -83,7 +83,7 @@ const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sec
                 </div>
             </div>
             <Quiz title={""}  />
-            <Quiz title={""}  />
+            {/* <Quiz title={""}  /> */}
        </div>
        
     </div>
