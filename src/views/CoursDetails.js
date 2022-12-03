@@ -19,11 +19,11 @@ import { BASE_URL_FILE } from "../api/constantes";
 
   
 
-export const messagesItems=["Lorem ipsum dolor sit amet","Consectetur adipiscing elit","Lorem ipsum dolor sit amet","Facilisis in pretium nisl aliquet"]
+export const messagesItems=["Pas besoin d'avoir des compétences extraodinaire pour suivre ce cours."]
 
 
 
-export const messagesItemsObjectifs=["Lorem ipsum dolor sit amet","Consectetur adipiscing elit","Lorem ipsum dolor sit amet","Facilisis in pretium nisl aliquet"]
+export const messagesItemsObjectifs=["Au terme de ce  cours, les étudiants et étudiantes auront acquis toutes les connaissances pratiques et théoriques nécessaires pour la preparation de la sauce graine  "]
 
 export const contentDescription = " Attribuée aux seuls peuples de l’ouest, la sauce graine est désormais la plus consommée de tout le pays. Du nord au sud, de l’est à l’ouest, elle est appréciée de tous en Côte d’Ivoire. La sauce graine est faite à base de noix de palme cuits et pilés au mortier, dont le jus est extrait et utilisé pour la recette."
 
@@ -99,7 +99,7 @@ export default function CoursDetails(){
                     <DescriptionComponent title="Description du contenu" content={descriptionCours} />
 
                     {/*  Objectifs pédagogiques du cours */}
-                    <MessageComponent type="success" items={messagesItems} header='Objectifs pédagogiques du cours' />
+                    <MessageComponent type="success" items={messagesItemsObjectifs} header='Objectifs pédagogiques du cours' />
                     
                     {/*  Prérequis pour ce cours */}
                     <MessageComponent type="info" items={messagesItems} header='Prérequis pour ce cours' />

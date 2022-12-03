@@ -48,20 +48,17 @@ const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sec
             </div>
         </div>
 
-        {
+        {/* {
             is_first_step && (
                 <>
-                    {/*  Description du contenu */}
                     <DescriptionComponent title="Description du contenu" content={contentDescription} />
 
-                    {/*  Objectifs pédagogiques du cours */}
                     <MessageComponent type="success" items={messagesItems} header='Objectifs pédagogiques du cours' />
 
-                    {/*  Prérequis pour ce cours */}
                     <MessageComponent type="info" items={messagesItems} header='Prérequis pour ce cours' />
                 </>
             ) 
-        }
+        } */}
 
         {
         sections.data.map( ({attributes: section}) =>{ 

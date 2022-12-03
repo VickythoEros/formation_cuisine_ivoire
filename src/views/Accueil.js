@@ -14,34 +14,9 @@ import PlatsCrad from '../components/cards/PlatsCard';
 import { useState,useEffect } from 'react';
 import { instanceAxios } from '../api/instance';
 import { ControlPointDuplicateRounded } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 
-const platsList = [
-    {
-        imageUrl: 'https://recettesdafrique.com/wp-content/uploads/2022/04/Sauce-graine-a-la-queue-de-boeuf.jpg',
-        imageAlt: 'Sauce Graine',
-        title: 'sauce graine',
-        description: 'Du nord au sud, de l’est à l’ouest, elle est appréciée de tous en Côte d’Ivoire. La sauce graine est faite à base de noix de palme cuits et pilés au mortier, dont le jus est extrait et utilisé pour la recette.',
-        views: 204,
-        rating: 4,
-    },
-    {
-        imageUrl: 'https://recettes.africa/wp-content/uploads/2020/03/sauce-ntro-750x500.jpg',
-        imageAlt: 'Sauce N’tro',
-        title: 'Sauce N’tro',
-        description: 'Attribuée aux seuls peuples de l’ouest, la sauce graine est désormais la plus consommée de tout le pays. Du nord au sud, de l’est à l’ouest, elle est appréciée de tous en Côte d’Ivoire. La sauce graine est faite à base de noix de palme cuits et pilés au mortier, dont le jus est extrait et utilisé pour la recette. ',
-        views: "54",
-        rating: 3,
-    },
-    {
-        imageUrl: 'https://discover-ivorycoast.com/wp-content/uploads/2019/02/Foutou-Banane-2-1024x683.jpg',
-        imageAlt: 'Kabato',
-        title: 'Kabato',
-        description: "Kabato est un plat originaire du nord de la Côte d'Ivoire,Il est consommé en Côte d'Ivoire généralement par le peuple malinké du nord appelé communément dioula. C'est aussi un mets de référence chez le peuple Sénoufo leur voisin direct.",
-        views: 102,
-        rating: 5,
-    }
-]
 
 
  export function SelectPlatsContainer() {
@@ -81,7 +56,7 @@ const platsList = [
 
 
 function Accueil() {
-    
+    const navigate =  useNavigate()
     const [listcourses , setListCourses] = useState([])
 
     useEffect(()=>{
@@ -125,7 +100,7 @@ function Accueil() {
                         <div className="row justify-content-center align-items-center pt-md-5">
                             <div className="col-md-8 text-center">
                             <Button
-                            className="px-md-5 px-3" colorScheme='orange' size='lg'>
+                            className="px-md-5 px-3" colorScheme='orange' onClick={()=>navigate('/cours',{replace:true})} size='lg'>
                                 Voir la liste des formations
                             </Button>
                             </div>
@@ -172,7 +147,7 @@ function Accueil() {
                             Ces cours de cuisine en ligne s'adresse aux pros et aux amateurs des plats <span style={{color:'orangered',textDecoration:'underline'}} >Ivoirien</span>. Ils vous permettent de maîtriser facilement les techniques de bases de la cuisson ivoirien.
                             </h1>
                             <h2 style={{zIndex:10,position:"relative"}}>
-                            texte employé dans la composition et la mise en page avant impression
+                            Appren de nouvelles techniques de cuisson de plats ivoirien. 
                             </h2>
                         </div>
                         <div className='col-md-5 col-11 py-5'>
@@ -189,8 +164,9 @@ function Accueil() {
                     <div className="row justify-content-center align-items-center">
                         <div className="col-lg-8 col-md-7 col-sm-10 col-12 text-center">
                             <h1 style={{zIndex:10,position:"relative"}} >
-                            Le Lorem Ipsum est simplement du faux 
+                                Découvrer les secrets des plats ivoirien 
                             </h1>
+                            <p>A chaque Ethnie son secret de cuisson</p>
                         </div>
                     </div>
                 </div>
