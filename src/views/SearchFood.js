@@ -13,6 +13,7 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { Button } from '@chakra-ui/react';
 import queryString from 'query-string';
+import FoodCard from '../components/cards/FoodCard';
 
 const animatedComponents = makeAnimated();
 
@@ -35,15 +36,16 @@ export default function SearchFood(){
         const url = `/foods?${queryString.stringify({
             '': selected.map(i => i.value)
         })}`
-        console.log(url)
         
         instanceAxios.get('/foods',{
             params: {
-                'filters[ingredients][id][$in]': selected.map(i => i.value)
+                'filters[ingredients][id][$in]': selected.map(i => i.value),
+                populate: ['image', 'courses']
             },
             // signal:controller.signal
         })
         .then(({data}) => {
+            console.log(data.data)
             setFoundFoods(data.data)
         })
         .catch(err => console.warn("ERRROR ", err.msg, err))
@@ -143,7 +145,7 @@ export default function SearchFood(){
                     </div>
                     
                     <div className='row justify-content-evenly align-items-center'>
-                       {  foundFoods?.map((plat,index)=> <PlatsCrad key={plat.id} platItem={plat.attributes} /> ) }
+                       {  foundFoods?.map((plat,index)=> <FoodCard id={plat.id} {...plat.attributes} /> ) }
                     </div>
                   
                     <div className="row ">
