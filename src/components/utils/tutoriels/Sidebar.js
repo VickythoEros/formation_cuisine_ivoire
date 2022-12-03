@@ -3,15 +3,15 @@ import { CalendarIcon } from '@chakra-ui/icons'
 import { Steps } from 'rsuite';
 
 
-export default function Sidebar({coursLessons}){
+export default function Sidebar({coursLessons,currentLessonIndex,courseId}){
 
 
     return(
-        <nav id="sidebar" className="sidebar js-sidebar">
-			<div className="sidebar-content js-simplebar">
-				<a className="sidebar-brand" href="#">
-					<span className="align-middle pb-5">Progression</span>
-					<Steps currentStatus='process' current={0}>
+        <nav id="sidebar" className="sidebar js-sidebar" >
+			<div style={{backgroundColor:"orangered"}} className="sidebar-content js-simplebar "  >
+				<a className="sidebar-brand bg-white  shadow" href="#">
+					<span className="align-middle pb-5 text-dark fw-bolder ">Progression</span>
+					<Steps currentStatus='process' current={currentLessonIndex}>
 						<Steps.Item />
 						<Steps.Item />
 						<Steps.Item />
@@ -24,8 +24,8 @@ export default function Sidebar({coursLessons}){
 					</li>
 					{coursLessons && coursLessons.map((lesson,index)=>{
 						let lessonInfo = lesson?.attributes
-						return (<li key={index} className="sidebar-item active">
-						<Link className="sidebar-link d-flex align-items-center text-decoration-none" to="/cours/1/tutoriel1">
+						return (<li key={index} className={`sidebar-item ${((currentLessonIndex +1) === lesson.id) && "active"} `}>
+						<Link className="sidebar-link d-flex align-items-center text-decoration-none" to={`/cours/${courseId}/tutoriel1/${lesson.id} `}>
 						<CalendarIcon /> <span className="align-middle"> {lessonInfo.title} </span>
 						</Link>
 						</li>)

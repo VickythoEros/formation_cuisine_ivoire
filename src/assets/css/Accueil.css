@@ -51,11 +51,11 @@
 }
 
 .accueil-infos-section h1{
-    font-size: 70px;
+    /* font-size: 0px; */
     display: block;
     /* color: var(--primary-color); */
  
-    font-weight: 800;
+    /* font-weight: 800; */
     /* text-transform: capitalize; */
     line-height: 1.4;
 }

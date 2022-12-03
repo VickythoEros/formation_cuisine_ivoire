@@ -36,14 +36,13 @@ const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sec
                 <p>{lesson.description || description}</p>
             </div>
         </div>
-        <div className="row justify-content-center align-items-center">
-            <div className="col-md-10 py-4 col-12">
+        <div className="row justify-content-center align-items-center mt-4 mb-5 ">
+            <div className="col-md-10  col-12 shadow rounded bg-white p-2">
             <Player
                 playsInline
                 poster="https://recettesdafrique.com/wp-content/uploads/2022/04/Sauce-graine-a-la-queue-de-boeuf.jpg"
                 src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
             >
-               
                 <BigPlayButton position="center" />
             </Player>
             </div>
@@ -65,7 +64,12 @@ const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sec
         }
 
         {
-        sections.data.map( ({attributes: section}) => <InfoSection title={section.title} description={section.description} /> )
+        sections.data.map( ({attributes: section}) =>{ 
+            if(  section.description === 'Objectif pédagoqiue de la leçon'){
+                return   <MessageComponent type="success" items={messagesItems} header='Objectifs pédagogiques du cours' />
+            }
+           return <InfoSection title={section.title} description={section.description} />
+        } )
         }
          
        

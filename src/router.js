@@ -1,3 +1,4 @@
+import { Spinner } from '@chakra-ui/react'
 import Accueil from "./views/Accueil";
 import Connexion from "./views/Connexion";
 import Cours from "./views/Cours";
@@ -7,15 +8,20 @@ import Inscription from "./views/Inscription";
 import Tutoriel from "./views/Tutoriel";
 import Tutoriel1 from "./views/Tutoriel1";
 
-
-
+<Spinner
+  thickness='4px'
+  speed='0.65s'
+  emptyColor='gray.200'
+  color='blue.500'
+  size='xl'
+/>
 
 const appRoutes = [
     {
         path:"/",
         element: <Accueil />,
         errorElement: <ErrorPage />,
-        // loader: donnée à charger sur la page
+        // loader: <Spinner />
         // children:{
         //     path:"/cours",
         //     element:<Cours />,

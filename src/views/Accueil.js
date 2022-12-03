@@ -45,7 +45,6 @@ const platsList = [
 
 
  export function SelectPlatsContainer() {
-  
 
   
     return (
@@ -169,8 +168,8 @@ function Accueil() {
                 <div className="container py-5">
                     <div className="row justify-content-start align-items-center">
                         <div  className="col-md-7 col-sm-10 col-12">
-                            <h1>
-                            Le Lorem Ipsum est simplement du faux 
+                            <h1 className='h1' >
+                            Ces cours de cuisine en ligne s'adresse aux pros et aux amateurs des plats <span style={{color:'orangered',textDecoration:'underline'}} >Ivoirien</span>. Ils vous permettent de maîtriser facilement les techniques de bases de la cuisson ivoirien.
                             </h1>
                             <h2 style={{zIndex:10,position:"relative"}}>
                             texte employé dans la composition et la mise en page avant impression

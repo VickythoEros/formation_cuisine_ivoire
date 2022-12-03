@@ -65,9 +65,9 @@ export default function Tutoriel1(){
         <>
         <NavbarApp />
         <div className="wrapper">
-            <Sidebar coursLessons={coursLessons} />
-            <div className="main">
-                <Navbar />
+            <Sidebar coursLessons={coursLessons} courseId={coursId} currentLessonIndex={currentLessonIndex}  />
+            <div className="main tutoriel1-main"  >
+                <Navbar courseId={coursId} currentLessonIndex={currentLessonIndex} />
                 <main className="content tutoriel1">
                     
                     {

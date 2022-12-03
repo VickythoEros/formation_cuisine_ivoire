@@ -91,7 +91,7 @@ export default function CoursDetails(){
                 <div className="container">
                     <div className="row justify-content-center align-items-center">
                         <div className="col-lg-7 col-md-8 col-sm-10 col-11 text-center pb-2 pb-md-4 ">
-                            <Image className="shadow rounded"src={`${BASE_URL_FILE}/uploads/sauce_graine_32ad5df3d3.jpg`} alt="bg-section-container" />
+                            <Image className="shadow p-3 rounded"src={`${BASE_URL_FILE}/uploads/sauce_graine_32ad5df3d3.jpg`} alt="bg-section-container" />
                         </div>
                     </div>
                    

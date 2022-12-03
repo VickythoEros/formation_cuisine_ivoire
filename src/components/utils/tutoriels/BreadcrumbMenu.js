@@ -6,19 +6,19 @@ import {
   import { ChevronRightIcon } from '@chakra-ui/icons'
 
 
-const BreadcrumbMenu = ()=>{
+const BreadcrumbMenu = ({courseId,currentLessonIndex})=>{
 
     return( <Breadcrumb spacing='8px' separator={<ChevronRightIcon color='gray.500' />}>
          <BreadcrumbItem>
-             <BreadcrumbLink href='#' className="fw-bold" >Accueil</BreadcrumbLink>
+             <BreadcrumbLink href='/' className="fw-bold" >Accueil</BreadcrumbLink>
          </BreadcrumbItem>
  
          <BreadcrumbItem>
-             <BreadcrumbLink href='#' className="fw-bold">Cours</BreadcrumbLink>
+             <BreadcrumbLink href={`/cours/${courseId}`} className="fw-bold">Cours</BreadcrumbLink>
          </BreadcrumbItem>
  
          <BreadcrumbItem isCurrentPage>
-             <BreadcrumbLink href='#' className="fw-bold">Leçon 1</BreadcrumbLink>
+             <BreadcrumbLink href={`/cours/${courseId}/${currentLessonIndex}`} className="fw-bold">Leçon {currentLessonIndex+1} </BreadcrumbLink>
          </BreadcrumbItem>
      </Breadcrumb>)
  }
