@@ -5,6 +5,7 @@ import Cours from "./views/Cours";
 import CoursDetails from "./views/CoursDetails";
 import ErrorPage from "./views/ErrorPage";
 import Inscription from "./views/Inscription";
+import SearchFood from './views/SearchFood';
 import Tutoriel from "./views/Tutoriel";
 import Tutoriel1 from "./views/Tutoriel1";
 
@@ -36,6 +37,11 @@ const appRoutes = [
     {
         path:"/inscription",
         element: <Inscription />,
+        errorElement: <ErrorPage />,
+    },
+    {
+        path:"/search_food",
+        element: <SearchFood />,
         errorElement: <ErrorPage />,
     },
     {

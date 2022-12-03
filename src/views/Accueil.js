@@ -147,7 +147,7 @@ function Accueil() {
                             Ces cours de cuisine en ligne s'adresse aux pros et aux amateurs des plats <span style={{color:'orangered',textDecoration:'underline'}} >Ivoirien</span>. Ils vous permettent de maîtriser facilement les techniques de bases de la cuisson ivoirien.
                             </h1>
                             <h2 style={{zIndex:10,position:"relative"}}>
-                            Appren de nouvelles techniques de cuisson de plats ivoirien. 
+                            Apprennez de nouvelles techniques de cuisson de plats ivoirien. 
                             </h2>
                         </div>
                         <div className='col-md-5 col-11 py-5'>
