@@ -5,6 +5,7 @@ import Cours from "./views/Cours";
 import CoursDetails from "./views/CoursDetails";
 import ErrorPage from "./views/ErrorPage";
 import Inscription from "./views/Inscription";
+import MesCours from './views/MesCours';
 import SearchFood from './views/SearchFood';
 import Tutoriel from "./views/Tutoriel";
 import Tutoriel1 from "./views/Tutoriel1";
@@ -47,6 +48,11 @@ const appRoutes = [
     {
         path:"/cours",
         element: <Cours />,
+        errorElement: <ErrorPage />,
+    },
+    {
+        path:"/mes_cours",
+        element: <MesCours />,
         errorElement: <ErrorPage />,
     },
     {

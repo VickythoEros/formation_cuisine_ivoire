@@ -8,6 +8,13 @@ import MessageComponent from "../components/generics/MessageComponent";
 import Quiz from '../components/utils/Quiz';
 import { contentDescription, messagesItems } from "./CoursDetails";
 
+
+
+const video = ["https://youtube.com/clip/Ugkxh9YOjtRJ-WWCVvIO1XRXr3geO7oyoBu9",
+    "https://youtube.com/clip/UgkxneFIwWT0U753w0epjcFHv8CsyhCMyz1w",
+    "https://youtube.com/clip/UgkxtMOrWDOyJYFWFMEMBa-UTnQuQc2lLvtJ"
+]
+
 const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sections= {data: []},currentLessonIndex})=>{
     const [lesson, setLesson] = useState({})
 
@@ -42,7 +49,7 @@ const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sec
             <Player
                 playsInline
                 poster="https://recettesdafrique.com/wp-content/uploads/2022/04/Sauce-graine-a-la-queue-de-boeuf.jpg"
-                src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                src={`https://youtu.be/JeUaacC8pxc`}
             >
                 <BigPlayButton position="center" />
             </Player>
