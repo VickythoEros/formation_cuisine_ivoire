@@ -5,9 +5,17 @@ import { instanceAxios } from '../api/instance';
 import DescriptionComponent from "../components/generics/DescriptionComponent";
 import InfoSection from '../components/generics/InfoSection';
 import MessageComponent from "../components/generics/MessageComponent";
+import Quiz from '../components/utils/Quiz';
 import { contentDescription, messagesItems } from "./CoursDetails";
 
-const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sections= {data: []}})=>{
+
+
+const video = ["https://youtube.com/clip/Ugkxh9YOjtRJ-WWCVvIO1XRXr3geO7oyoBu9",
+    "https://youtube.com/clip/UgkxneFIwWT0U753w0epjcFHv8CsyhCMyz1w",
+    "https://youtube.com/clip/UgkxtMOrWDOyJYFWFMEMBa-UTnQuQc2lLvtJ"
+]
+
+const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sections= {data: []},currentLessonIndex})=>{
     const [lesson, setLesson] = useState({})
 
     // useEffect(()=> {
@@ -41,7 +49,7 @@ const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sec
             <Player
                 playsInline
                 poster="https://recettesdafrique.com/wp-content/uploads/2022/04/Sauce-graine-a-la-queue-de-boeuf.jpg"
-                src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                src={`https://youtu.be/JeUaacC8pxc`}
             >
                 <BigPlayButton position="center" />
             </Player>
@@ -61,14 +69,29 @@ const TutorielStep = ({is_first_step = true, id, title, description= 'Nono', sec
         } */}
 
         {
+
         sections.data.map( ({attributes: section}) =>{ 
-            if(  section.description === 'Objectif pédagoqiue de la leçon'){
-                return   <MessageComponent type="success" items={messagesItems} header='Objectifs pédagogiques du cours' />
+            if(  section.title === 'Objectif pédagoqiue de la leçon'){
+                return   <MessageComponent type="success" items={section.description} header='Objectifs pédagogiques de la leçon' />
             }
-           return <InfoSection title={section.title} description={section.description} />
+           return <InfoSection currentLessonIndex={currentLessonIndex} title={section.title} description={section.description} />
         } )
         }
-         
+
+
+       <div className='py-5'>
+            <div className='container'>
+                <div className='row justify-content-center align-items-center'>
+                    <div className='col-12'>
+                        <h2  className='fw-bolder h2' >
+                            Vérifiez vos connaissances
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <Quiz title={""}  />
+            {/* <Quiz title={""}  /> */}
+       </div>
        
     </div>
     )

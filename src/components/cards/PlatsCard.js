@@ -15,7 +15,7 @@ export default function PlatsCrad({platItem}) {
     
     
     return (
-      <Box  onClick={()=>navigate(`/cours/${plat?.id}`)} style={{zIndex:3}} className='my-4 bg-white py-4 px-4 shadow box-cours-container' maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+      <Box  onClick={()=>navigate(`/cours/${plat?.id}`)} style={{zIndex:3}} className='my-4 card-quiz bg-white py-4 px-4 shadow box-cours-container' maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
         <Image height={250} src={`${BASE_URL_FILE}/uploads/sauce_graine_32ad5df3d3.jpg`} alt={plat.imageAlt} />
   
         <Box p='6'>

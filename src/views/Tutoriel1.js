@@ -72,7 +72,7 @@ export default function Tutoriel1(){
                     
                     {
                         coursLessons.length == 0 ? <h1>Ce cours n'est pas encore garnis. Passez plus tard</h1> : (
-                            <TutorielStep id={coursLessons[currentLessonIndex].id} is_first_step={currentLessonIndex == 0} title={coursLessons[currentLessonIndex].attributes.title} description={coursLessons[currentLessonIndex].attributes.description} sections={coursLessons[currentLessonIndex].attributes.sections}  />
+                            <TutorielStep id={coursLessons[currentLessonIndex].id} is_first_step={currentLessonIndex == 0} title={coursLessons[currentLessonIndex].attributes.title} description={coursLessons[currentLessonIndex].attributes.description} currentLessonIndex={currentLessonIndex} sections={coursLessons[currentLessonIndex].attributes.sections}  />
                         )
                     }
                     
