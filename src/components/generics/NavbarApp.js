@@ -71,11 +71,12 @@ function NavbarApp() {
                   <Link className={`mx-md-5 text-decoration-none ${textColor} `} to="/">
                     Accueil
                   </Link>
-                  <Link className={`mx-md-5 text-decoration-none ${textColor} `}  to="/search_food">
-                    Recommendations
-                  </Link>
+                 
                   <Link className={`mx-md-5 text-decoration-none ${textColor} `}  to="/cours">
                     Cours
+                  </Link>
+                  <Link className={`mx-md-5 text-decoration-none ${textColor} `}  to="/search_food">
+                    Recommendations
                   </Link>
                   { !!!isLoggedIn ?
                  (<>
