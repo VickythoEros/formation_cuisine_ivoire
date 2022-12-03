@@ -15,6 +15,7 @@ import DescriptionComponent from "../components/generics/DescriptionComponent";
 import { useNavigate, useParams } from "react-router-dom";
 import { instanceAxios } from "../api/instance";
 import { BASE_URL_FILE } from "../api/constantes";
+import { authHeader } from "../services/authHeader";
 
 
   
@@ -33,10 +34,36 @@ export default function CoursDetails(){
     const [coursDetails , setCoursDetails] = useState({})
     const [coursLessons , setCoursLessons] = useState([])
     const [descriptionCours , setDescriptionCours] = useState('')
+    const [me , setMe] = useState({})
+    
 
-    const onClickStartCourse =()=>{
-
-        navigate(`/cours/${coursId}/tutoriel1/1`,{replace:true})
+    const onClickStartCourse = ()=>{
+        console.log(`Cours (${coursId}) Details`, coursDetails)
+        const currentParticipants = coursDetails.data.attributes.participants.data
+        const all = currentParticipants.concat([me.id])
+        console.log("Me ", me)
+        console.log("Participants ids ", all)
+        const r = () => {
+            console.log("Partics ", all)
+        }
+        r()
+        instanceAxios.put(
+            `/courses/${coursId}`,
+            {
+                data: {
+                    participants: all
+                }
+            },
+            {
+                headers: authHeader()
+                // signal:controller.signal
+            }
+        )
+        .then(({data}) => {
+            console.log("Updated data ", data)
+            navigate(`/cours/${coursId}/tutoriel1/1`,{replace:true})
+        })
+        .catch(err => console.error(err.msg, err))
 
     }
 
@@ -46,7 +73,7 @@ export default function CoursDetails(){
         
         const getDetailCourse = async()=>{
             try {
-                const response = await instanceAxios.get(`/courses/${coursId}?populate=lessons`,{signal:controller.signal})
+                const response = await instanceAxios.get(`/courses/${coursId}?populate=*`,{headers: authHeader(), signal:controller.signal})
                 console.log(' data course 1',response.data.data.attributes.lessons.data)
                 if(componentIsMounted){
                     setCoursLessons(response.data.data.attributes.lessons.data)
@@ -56,6 +83,9 @@ export default function CoursDetails(){
             } catch (error) {
                 console.error(error)
             }
+            instanceAxios.get(`/users/me`, {
+                headers: authHeader()
+            }).then(({data}) => setMe(data))
         }
 
         getDetailCourse()
@@ -115,7 +145,7 @@ export default function CoursDetails(){
                     <div className='row justify-content-end'>
                         <div className="col-lg-5 col-md-5 col-sm-7 col-12 text-end">
                         <Button 
-                            onClick={()=>onClickStartCourse()}
+                            onClick={onClickStartCourse}
                             className=''
                             rightIcon={<ArrowForwardIcon />}
                             colorScheme='teal' size='lg'>
