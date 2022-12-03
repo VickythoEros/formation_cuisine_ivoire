@@ -2,7 +2,7 @@
 import { useEffect,useState } from "react"
 import "../../../assets/css/utils/course/SectionHeader.css"
 
-export default function SectionHeader({platItem}){
+export default function SectionHeader({platItem, nb_students}){
     console.log('props platItem :',platItem)
     const [coursDetail,setCoursDetails] = useState({})
 
@@ -30,7 +30,7 @@ export default function SectionHeader({platItem}){
                                 </p>
                                 
                                 <p>
-                                    <i class="fa-solid fa-user-graduate"></i> 10 Apprenants
+                                    <i class="fa-solid fa-user-graduate"></i> {nb_students} Apprenant{nb_students > 1 ? 's': ''}
                                 </p>
                            
                             </div>

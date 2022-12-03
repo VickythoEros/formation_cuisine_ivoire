@@ -41,12 +41,6 @@ export default function CoursDetails(){
         console.log(`Cours (${coursId}) Details`, coursDetails)
         const currentParticipants = coursDetails.data.attributes.participants.data
         const all = currentParticipants.concat([me.id])
-        console.log("Me ", me)
-        console.log("Participants ids ", all)
-        const r = () => {
-            console.log("Partics ", all)
-        }
-        r()
         instanceAxios.put(
             `/courses/${coursId}`,
             {
@@ -100,7 +94,10 @@ export default function CoursDetails(){
         <main className="cours-details-main pb-5">
             <NavbarApp />
 
-            <SectionHeader platItem={coursDetails.data} />
+            <SectionHeader 
+                nb_students={(coursDetails.data && coursDetails.data.attributes.participants.data) ? coursDetails.data && coursDetails.data.attributes.participants.data.length : 0 } 
+                platItem={coursDetails.data}
+                 />
 
             <section className="cours-details-title-section">
                <div className="container">
@@ -110,7 +107,7 @@ export default function CoursDetails(){
                                 Tout savoir du contenu de ce cours
                             </h1>
                             <p>
-                                Dernière mise à jours : {new Date().toLocaleDateString()} 
+                                Dernière mise à jour : {(coursDetails.data ? new Date(coursDetails.data.attributes.updatedAt) : new Date() ).toLocaleDateString()} 
                             </p>
                         </div>
                     </div>
@@ -144,13 +141,27 @@ export default function CoursDetails(){
                 <div className="container">
                     <div className='row justify-content-end'>
                         <div className="col-lg-5 col-md-5 col-sm-7 col-12 text-end">
-                        <Button 
-                            onClick={onClickStartCourse}
-                            className=''
-                            rightIcon={<ArrowForwardIcon />}
-                            colorScheme='teal' size='lg'>
-                            Commencer le cours
-                        </Button>
+                            {
+                                (coursDetails.data && coursDetails.data.attributes.participants.data && coursDetails.data.attributes.participants.data.findIndex(p => p.id == me.id) > -1 ) ? (
+                                    <Button 
+                                        onClick={onClickStartCourse}
+                                        className='bg-success text-light'
+                                        rightIcon={<ArrowForwardIcon />}
+                                        // colorScheme='teal' 
+                                        size='lg'>
+                                        Continuer mon cours
+                                    </Button>
+                                ) : (
+                                    <Button 
+                                        onClick={onClickStartCourse}
+                                        className=''
+                                        rightIcon={<ArrowForwardIcon />}
+                                        colorScheme='teal' size='lg'>
+                                        Commencer le cours
+                                    </Button>
+                                )
+                            }
+                        
                             
                         </div>
                     </div>
